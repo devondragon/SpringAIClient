@@ -1,0 +1,7 @@
+ds:
+  openai:
+    api-key: ${OPENAI_API_KEY} # Use environment variable for API key
+    model: gpt-4o
+    output-tokens: 4096
+    api-endpoint: https://api.openai.com/v1/chat/completions
+    system-prompt: "You are a helpful assistant."

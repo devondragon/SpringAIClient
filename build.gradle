@@ -1,0 +1,122 @@
+plugins {
+    id 'org.springframework.boot' version '3.3.4'
+    id 'io.spring.dependency-management' version '1.1.6'
+    id 'com.github.ben-manes.versions' version '0.51.0'
+    id 'java-library'
+    id 'maven-publish'
+    id 'signing'
+    id 'com.vanniktech.maven.publish' version '0.29.0'
+}
+
+import com.vanniktech.maven.publish.SonatypeHost
+
+
+group 'com.digitalsanctuary.springaiclient'
+version '0.8.0'
+description = 'Simple SpringBoot AI Client Library'
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(21)
+    }
+    sourceCompatibility = JavaVersion.VERSION_21
+    targetCompatibility = JavaVersion.VERSION_21
+    withSourcesJar()
+    withJavadocJar()
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // Spring Boot dependencies
+    implementation 'org.springframework.boot:spring-boot-starter-web:3.3.4'
+
+    // Lombok dependencies
+    compileOnly 'org.projectlombok:lombok:1.18.34'
+    annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor:3.3.4'
+    annotationProcessor 'org.projectlombok:lombok:1.18.34'
+
+    // Lombok dependencies for test classes
+    testCompileOnly 'org.projectlombok:lombok:1.18.34'
+    testAnnotationProcessor 'org.projectlombok:lombok:1.18.34'
+
+    // Testing dependencies
+    testImplementation 'org.springframework.boot:spring-boot-starter-test:3.3.4'
+    testImplementation 'org.springframework.boot:spring-boot-starter-actuator:3.3.4'
+}
+
+test {
+    useJUnitPlatform()
+}
+
+tasks.named('bootJar') {
+    enabled = false
+}
+
+tasks.named('jar') {
+    enabled = true
+    archiveBaseName.set('spring-ai-client')
+    archiveClassifier.set('')
+}
+
+
+mavenPublishing {
+  publishToMavenCentral(SonatypeHost.DEFAULT)
+  signAllPublications()
+  coordinates("com.digitalsanctuary", "spring-ai-client", project.version)
+
+  pom {
+    name = "Spring AI Client"
+    description = "Simple SpringBoot AI Client Library."
+    inceptionYear = "2020"
+    url = "https://github.com/devondragon/spring-ai-client/"
+    licenses {
+      license {
+        name = "The Apache License, Version 2.0"
+        url = "http://www.apache.org/licenses/LICENSE-2.0.txt"
+        distribution = "http://www.apache.org/licenses/LICENSE-2.0.txt"
+      }
+    }
+    developers {
+      developer {
+        id = "devondragon"
+        name = "Devon Hillard"
+        url = "https://github.com/devondragon/"
+      }
+    }
+    scm {
+      url = "https://github.com/username/mylibrary/"
+      connection = "scm:git:git://github.com/username/mylibrary.git"
+      developerConnection = "scm:git:ssh://git@github.com/username/mylibrary.git"
+    }
+  }
+}
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            from components.java
+            groupId = 'com.digitalsanctuary'
+            artifactId = 'spring-ai-client'
+            version = project.version
+        }
+    }
+    repositories {
+        maven {
+            name = 'reposiliteRepository'
+            url = uri('https://reposilite.tr0n.io/private')
+            credentials(PasswordCredentials)
+            authentication {
+                 basic(BasicAuthentication)
+            }
+        }
+
+    }
+}
+
+signing {
+    useInMemoryPgpKeys(System.getenv('SIGNING_KEY'), System.getenv('SIGNING_PASSWORD'))
+    sign publishing.publications.mavenJava
+}
