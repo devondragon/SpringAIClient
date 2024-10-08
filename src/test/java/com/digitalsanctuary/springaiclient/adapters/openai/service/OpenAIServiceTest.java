@@ -1,6 +1,7 @@
 package com.digitalsanctuary.springaiclient.adapters.openai.service;
 
 import static org.junit.jupiter.api.Assertions.assertNotNull;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -17,6 +18,12 @@ class OpenAIServiceTest {
 
     @Autowired
     private OpenAIService openAIService;
+
+
+    @BeforeAll
+    public static void logJdkVersion() {
+        log.info("Running tests with JDK version: " + System.getProperty("java.version"));
+    }
 
     @Test
     void testSendSimpleRequest() {
