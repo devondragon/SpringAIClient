@@ -1,0 +1,14 @@
+{
+    "properties": [
+        {
+            "name": "ds.ai.openai.api-key",
+            "type": "java.lang.String",
+            "description": "Your OpenAI API key"
+        },
+        {
+            "name": "ds.ai.openai.model",
+            "type": "java.lang.String",
+            "description": "The model to use for the OpenAI API"
+        }
+    ]
+}

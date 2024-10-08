@@ -27,4 +27,16 @@ public class OpenAIResponse {
 
     @JsonProperty("system_fingerprint")
     private String systemFingerprint;
+
+    /**
+     * Gets the content of the first choice's message. This is a helper method to make it easier to access the content of the first choice's message.
+     *
+     * @return the content of the first choice's message, or null if not available
+     */
+    public String getMessage() {
+        if (choices != null && !choices.isEmpty() && choices.get(0).getMessage() != null) {
+            return choices.get(0).getMessage().getContent();
+        }
+        return null;
+    }
 }

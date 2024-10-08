@@ -30,8 +30,7 @@ class OpenAIServiceTest {
         log.debug(null != response ? response.toString() : "Response is null");
         // Assert that the response is not null
         assertNotNull(response);
-        assertNotNull(response.getChoices());
-        assertNotNull(response.getChoices().get(0).getMessage().getContent());
+        assertNotNull(response.getMessage());
     }
 
     @Test

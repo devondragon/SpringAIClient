@@ -9,7 +9,7 @@ import lombok.Data;
 
 @Data
 @Component
-@ConfigurationProperties(prefix = "ds.openai")
+@ConfigurationProperties(prefix = "ds.ai.openai")
 public class OpenAIConfigProperties {
     private String apiKey;
     private String apiEndpoint;
