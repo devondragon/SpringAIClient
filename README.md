@@ -34,8 +34,8 @@ Add the following dependency to your `pom.xml`:
 ```xml
 <dependency>
     <groupId>com.digitalsanctuary</groupId>
-    <artifactId>spring-ai-client</artifactId>
-    <version>1.1.0</version>
+    <artifactId>ds-spring-ai-client</artifactId>
+    <version>1.1.2</version>
 </dependency>
 ```
 
@@ -45,7 +45,7 @@ Add the following dependency to your `build.gradle`:
 
 ```groovy
 dependencies {
-    implementation 'com.digitalsanctuary:spring-ai-client:1.1.0'
+    implementation 'com.digitalsanctuary:ds-spring-ai-client:1.1.2'
 }
 ```
 
