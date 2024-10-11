@@ -13,7 +13,7 @@ import com.vanniktech.maven.publish.JavaLibrary
 import com.vanniktech.maven.publish.JavadocJar
 
 group 'com.digitalsanctuary.springaiclient'
-version '1.1.0'
+version '1.1.2'
 description = 'Simple SpringBoot AI Client Library'
 
 ext {
@@ -59,7 +59,7 @@ tasks.named('bootJar') {
 
 tasks.named('jar') {
     enabled = true
-    archiveBaseName.set('spring-ai-client')
+    archiveBaseName.set('ds-spring-ai-client')
     archiveClassifier.set('')
 }
 
@@ -103,10 +103,10 @@ mavenPublishing {
   configure(new JavaLibrary(new JavadocJar.Javadoc(), true))
   publishToMavenCentral(SonatypeHost.CENTRAL_PORTAL)
   signAllPublications()
-  coordinates("com.digitalsanctuary", "spring-ai-client", project.version)
+  coordinates("com.digitalsanctuary", "ds-spring-ai-client", project.version)
 
   pom {
-    name = "Spring AI Client"
+    name = "DS Spring AI Client"
     description = "Simple SpringBoot AI Client Library."
     inceptionYear = "2024"
     url = "https://github.com/devondragon/SpringAIClient"
