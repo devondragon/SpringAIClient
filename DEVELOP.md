@@ -21,3 +21,28 @@ To build the project, run:
 
 Contributions are welcome! Please fork the repository and submit a pull request with your changes.
 
+
+
+# Build and Publish Command Reference
+
+## Publish to Local Maven
+
+```shell
+gradle publishToMavenLocal --refresh-dependencies
+```
+
+## Publish to Private Maven repository
+
+```shell
+gradle publishALlPublicationsToReposiliteRepositoryRepository
+```
+
+
+## Publish to Maven Central
+
+```shell
+gradle publishAndReleaseToMavenCentral --no-configuration-cache
+```
+
+
+

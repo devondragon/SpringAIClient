@@ -1,6 +1,7 @@
 package com.digitalsanctuary.springaiclient.adapters.openai.config;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Component;
 import lombok.Data;
 
@@ -13,6 +14,7 @@ import lombok.Data;
  */
 @Data
 @Component
+@PropertySource("classpath:config/dsspringaiconfig.properties")
 @ConfigurationProperties(prefix = "ds.ai.openai")
 public class OpenAIConfigProperties {
 
