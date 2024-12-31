@@ -4,5 +4,9 @@
     "launch": {
         "configurations": [],
         "compounds": []
-    }
+    },
+    "debug.javascript.defaultRuntimeExecutable": {
+        "pwa-node": "/Users/devon/.local/share/mise/shims/node"
+    },
+    "python.defaultInterpreterPath": "/Users/devon/.local/share/mise/shims/python"
 }
