@@ -178,4 +178,3 @@ release {
     // afterReleaseBuild.dependsOn publishReposilite
     afterReleaseBuild.dependsOn publishMavenCentral
 }
-ui
