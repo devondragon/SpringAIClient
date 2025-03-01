@@ -14,6 +14,7 @@ The Spring AI Client Library is a simple and efficient library for interacting w
 - Supports multiple OpenAI models.
 - Handles API requests and responses seamlessly.
 - Provides a clean and maintainable code structure.
+- Supports proxy configuration for corporate environments.
 
 ## Getting Started
 
@@ -64,7 +65,7 @@ ds:
       api-key: ${OPENAI_API_KEY} # OpenAI API key
 
 ```
-This is the only required configuration. You can also configure optional properties described in the Full Example section below.
+This is the only required configuration. You can also configure optional properties described in the Full Example section below, including proxy settings for corporate environments.
 
 #### Simple Example Service
 
@@ -104,9 +105,7 @@ public class ExampleService {
 
 ### Full Configuration
 
-Configure the library using the `application.yml` file located in
-
-`src/main/resources`
+Configure the library using the `application.yml` file located in `src/main/resources`. The following example shows all available configuration options, including proxy settings.
 
 
 ```yaml
@@ -118,6 +117,14 @@ ds:
       output-tokens: 4096 # OpenAI max output tokens
       api-endpoint: https://api.openai.com/v1/chat/completions
       system-prompt: "You are a helpful assistant."
+      
+      # Optional proxy configuration
+      proxy:
+        enabled: false # Set to true to enable proxy
+        host: proxy.example.com # Proxy server hostname or IP
+        port: 8080 # Proxy server port
+        username: proxyuser # Optional proxy authentication username
+        password: proxypass # Optional proxy authentication password
 ```
 
 
@@ -162,6 +169,31 @@ public class ExampleService {
 ```
 
 
+
+## Proxy Configuration
+
+The library supports running behind corporate proxies. To configure a proxy:
+
+1. Set `ds.ai.openai.proxy.enabled` to `true`
+2. Configure the proxy host and port
+3. Optionally, provide proxy authentication credentials
+
+Example configuration:
+
+```yaml
+ds:
+  ai:
+    openai:
+      # ... other settings ...
+      proxy:
+        enabled: true
+        host: proxy.example.com
+        port: 8080
+        username: proxyuser  # Optional
+        password: proxypass  # Optional
+```
+
+This is especially useful in corporate environments where direct internet access is restricted.
 
 ## Contributing
 
