@@ -4,8 +4,35 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 
 /**
- * Represents the usage details of an OpenAI API request. This class captures the number of tokens used for the prompt, completion, and the total
- * tokens.
+ * Represents the token usage details returned by the OpenAI API.
+ * <p>
+ * This class captures detailed information about the number of tokens used in an OpenAI API request 
+ * and response. Token usage is important for monitoring API consumption, estimating costs, and 
+ * ensuring that requests stay within model context limits.
+ * </p>
+ * <p>
+ * Different OpenAI models have different context window sizes (maximum total tokens), pricing
+ * structures, and computational requirements. Understanding token usage helps optimize application
+ * performance and cost efficiency.
+ * </p>
+ * <p>
+ * Token counts are broken down into:
+ * <ul>
+ *   <li>Prompt tokens - Tokens used in the input/prompt sent to the API</li>
+ *   <li>Completion tokens - Tokens generated in the API response</li>
+ *   <li>Total tokens - Sum of prompt and completion tokens</li>
+ * </ul>
+ * </p>
+ * <p>
+ * Example usage:
+ * <pre>
+ * {@code
+ * OpenAIResponse response = openAIService.sendRequest("What is the capital of France?");
+ * Usage usage = response.getUsage();
+ * System.out.println("Total tokens used: " + usage.getTotalTokens());
+ * }
+ * </pre>
+ * </p>
  */
 @Data
 public class Usage {
