@@ -6,3 +6,11 @@ ds:
       output-tokens: 4096
       api-endpoint: https://api.openai.com/v1/chat/completions
       system-prompt: "You are a helpful assistant."
+      
+      # Test proxy configuration (disabled for normal tests)
+      proxy:
+        enabled: false
+        host: test-proxy.example.com
+        port: 8080
+        username: testuser
+        password: testpass
