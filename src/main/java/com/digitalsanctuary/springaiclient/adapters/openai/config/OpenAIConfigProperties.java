@@ -25,6 +25,12 @@ import lombok.Data;
  *       model: gpt-4o
  *       output-tokens: 4096
  *       system-prompt: "You are a helpful assistant."
+ *       proxy:
+ *         enabled: true
+ *         host: proxy.example.com
+ *         port: 8080
+ *         username: proxyuser
+ *         password: proxypass
  * </pre>
  * <p>
  * The following properties are supported:
@@ -34,11 +40,16 @@ import lombok.Data;
  *   <li>model: Default model to use (defaults to gpt-4o or as specified)</li>
  *   <li>output-tokens: Maximum tokens in responses (defaults to 4096)</li>
  *   <li>system-prompt: Default system prompt (defaults to "You are a helpful assistant.")</li>
+ *   <li>proxy.enabled: Whether to use a proxy for OpenAI API requests (defaults to false)</li>
+ *   <li>proxy.host: Proxy server hostname or IP address</li>
+ *   <li>proxy.port: Proxy server port</li>
+ *   <li>proxy.username: Username for proxy authentication (optional)</li>
+ *   <li>proxy.password: Password for proxy authentication (optional)</li>
  * </ul>
  * </p>
  * <p>
  * For security, it's recommended to use environment variables for sensitive properties
- * like api-key rather than hardcoding them in configuration files.
+ * like api-key and proxy.password rather than hardcoding them in configuration files.
  * </p>
  */
 @Data
@@ -71,4 +82,40 @@ public class OpenAIConfigProperties {
      * The system prompt to be used for generating responses.
      */
     private String systemPrompt;
+    
+    /**
+     * Proxy configuration for OpenAI API requests.
+     */
+    private ProxyConfig proxy = new ProxyConfig();
+    
+    /**
+     * Inner class for proxy configuration properties.
+     */
+    @Data
+    public static class ProxyConfig {
+        /**
+         * Whether to use a proxy for OpenAI API requests.
+         */
+        private boolean enabled = false;
+        
+        /**
+         * Proxy server hostname or IP address.
+         */
+        private String host;
+        
+        /**
+         * Proxy server port.
+         */
+        private int port;
+        
+        /**
+         * Username for proxy authentication (optional).
+         */
+        private String username;
+        
+        /**
+         * Password for proxy authentication (optional).
+         */
+        private String password;
+    }
 }
