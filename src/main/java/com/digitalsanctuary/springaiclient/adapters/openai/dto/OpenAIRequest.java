@@ -27,7 +27,6 @@ import lombok.Data;
  *     .build();
  * }
  * </pre>
- * </p>
  * <p>
  * The request is serialized to JSON when sent to the OpenAI API. The JSON structure
  * follows OpenAI's API specification for chat completions.

@@ -35,7 +35,6 @@ import lombok.Data;
  *   <li>output-tokens: Maximum tokens in responses (defaults to 4096)</li>
  *   <li>system-prompt: Default system prompt (defaults to "You are a helpful assistant.")</li>
  * </ul>
- * </p>
  * <p>
  * For security, it's recommended to use environment variables for sensitive properties
  * like api-key rather than hardcoding them in configuration files.

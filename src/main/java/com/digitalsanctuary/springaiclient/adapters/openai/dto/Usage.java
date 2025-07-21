@@ -22,7 +22,6 @@ import lombok.Data;
  *   <li>Completion tokens - Tokens generated in the API response</li>
  *   <li>Total tokens - Sum of prompt and completion tokens</li>
  * </ul>
- * </p>
  * <p>
  * Example usage:
  * <pre>
@@ -32,7 +31,6 @@ import lombok.Data;
  * System.out.println("Total tokens used: " + usage.getTotalTokens());
  * }
  * </pre>
- * </p>
  */
 @Data
 public class Usage {
