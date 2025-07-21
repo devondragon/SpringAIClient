@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(find:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git push:*)",
+      "Bash(git checkout:*)",
+      "mcp__zen__thinkdeep",
+      "Bash(./gradlew:*)",
+      "mcp__zen__codereview"
+    ],
+    "deny": []
+  }
+}

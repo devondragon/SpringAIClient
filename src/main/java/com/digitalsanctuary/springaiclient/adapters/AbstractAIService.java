@@ -18,7 +18,6 @@ package com.digitalsanctuary.springaiclient.adapters;
  * <ul>
  *   <li>OpenAIService - For interacting with OpenAI's models</li>
  * </ul>
- * </p>
  * <p>
  * Future implementations may include:
  * <ul>
@@ -26,7 +25,6 @@ package com.digitalsanctuary.springaiclient.adapters;
  *   <li>GeminiService - For Google's Gemini models</li>
  *   <li>MistralService - For Mistral AI models</li>
  * </ul>
- * </p>
  *
  * @see com.digitalsanctuary.springaiclient.adapters.openai.service.OpenAIService
  */

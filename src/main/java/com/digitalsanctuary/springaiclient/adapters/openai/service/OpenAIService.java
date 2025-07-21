@@ -38,7 +38,6 @@ import lombok.extern.slf4j.Slf4j;
  * OpenAIResponse response = openAIService.sendRequest(request);
  * }
  * </pre>
- * </p>
  */
 @Slf4j
 @Service
@@ -81,7 +80,6 @@ public class OpenAIService extends AbstractAIService {
      *     .build();
      * }
      * </pre>
-     * </p>
      *
      * @return a new RequestBuilder object with default configuration values
      * @see RequestBuilder
@@ -107,7 +105,6 @@ public class OpenAIService extends AbstractAIService {
      * String answer = response.getMessage();
      * }
      * </pre>
-     * </p>
      *
      * @param text the user message to send to the AI
      * @return the response from OpenAI containing the generated message and usage information
