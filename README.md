@@ -20,7 +20,7 @@ The Spring AI Client Library is a simple and efficient library for interacting w
 ### Prerequisites
 
 - Java 17 or later
-- Gradle 8.10.1 or Maven 3.8.1+
+- Gradle 8.14.2 or Maven 3.8.1+
 - OpenAI API Key
 
 ### Quick Start
@@ -35,7 +35,7 @@ Add the following dependency to your `pom.xml`:
 <dependency>
     <groupId>com.digitalsanctuary</groupId>
     <artifactId>ds-spring-ai-client</artifactId>
-    <version>1.1.4</version>
+    <version>1.1.5</version>
 </dependency>
 ```
 
@@ -45,7 +45,7 @@ Add the following dependency to your `build.gradle`:
 
 ```groovy
 dependencies {
-    implementation 'com.digitalsanctuary:ds-spring-ai-client:1.1.4'
+    implementation 'com.digitalsanctuary:ds-spring-ai-client:1.1.5'
 }
 ```
 
