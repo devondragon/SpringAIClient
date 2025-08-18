@@ -7,6 +7,7 @@ The Spring AI Client Library is a simple and efficient library for interacting w
 
 > **NOTE**: You should check out the official Spring AI project at [https://spring.io/projects/spring-ai](https://spring.io/projects/spring-ai) to see if it meets your needs before using this library. I created this library because I wanted a simpler way to interact with the OpenAI API in my Spring Boot projects, and I wanted to be able to support new OpenAI models and features as they are released.
 
+> **NOTE**: This project is shuttered, the Spring AI Project has gotten a lot better and is a better choice!
 
 ## Features
 
