@@ -17,7 +17,7 @@ description = 'Simple SpringBoot AI Client Library'
 
 ext {
     springBootVersion = '3.5.6'
-    lombokVersion = '1.18.40'
+    lombokVersion = '1.18.42'
 }
 
 java {
