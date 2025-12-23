@@ -42,7 +42,7 @@ def generate_changelog(commits):
         api_key=os.environ.get("OPENAI_API_TOKEN"),  # This is the default and can be omitted
     )
     response = client.chat.completions.create(
-        model="gpt-4",
+        model="gpt-5-mini",
         messages=[
             {"role": "system", "content": "You are a helpful assistant for software development."},
             {"role": "user", "content": prompt},
