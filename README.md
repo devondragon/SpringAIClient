@@ -20,9 +20,12 @@ The Spring AI Client Library is a simple and efficient library for interacting w
 
 ### Prerequisites
 
-- Java 17 or later
-- Gradle 8.14.2 or Maven 3.8.1+
+- Java 17 or later (Java 21 recommended)
+- Spring Boot 4.0+ (this library version requires Spring Boot 4.x)
+- Gradle 8.14.2+ or Maven 3.8.1+
 - OpenAI API Key
+
+> **Version Compatibility Note**: This library version (2.x) requires Spring Boot 4.0+ and Java 17+. For Spring Boot 3.x projects, use version 1.x of this library.
 
 ### Quick Start
 
