@@ -1,3 +1,29 @@
+## [2.0.0] - 2025-12-23
+### Features
+- Improved generate_changelog.py: added error handling and CLI options.
+- Upgraded ML model from GPT-4 to GPT-5-mini.
+- Added Claude GitHub Actions and workflows:
+  - Claude Code Review workflow / GitHub Action
+  - Claude PR Assistant workflow
+- Documentation and release updates:
+  - Updated README with compatibility notes for Spring Boot 3.x and 4.x.
+  - Updated README with Spring Boot 4.0 and Java requirements.
+  - Updated project release/version information (updated release version, Gradle Release Plugin snapshot).
+
+### Fixes
+- Fixed Gradle deprecation warning related to group assignment.
+- Dependency maintenance and upgrades:
+  - Bumped springBootVersion through several releases (3.5.x → 4.0.1).
+  - Bumped org.projectlombok:lombok (1.18.38 → 1.18.40 → 1.18.42).
+  - Bumped org.junit.jupiter:junit-jupiter (5.13.3 → 5.13.4 → 6.0.0 → 6.0.1).
+  - Bumped com.vanniktech.maven.publish (0.34.0 → 0.35.0).
+  - Bumped com.github.ben-manes.versions (0.52.0 → 0.53.0).
+- Miscellaneous updates and enhancements (version/Claude settings, added enhancement tasks).
+
+### Breaking Changes
+- Upgraded to Spring Boot 4.0.1. This is a major framework upgrade — check the updated README for the new Java and compatibility requirements.
+- JUnit jumped to the 6.x series (now 6.0.1). Test code or test tooling may require updates to remain compatible.
+
 ## [1.1.5] - 2025-07-21
 ### Features
 - Updated project guidance in CLAUDE.md for comprehensive project understanding.
