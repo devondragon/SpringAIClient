@@ -10,7 +10,15 @@
       "Bash(./gradlew:*)",
       "mcp__zen__codereview",
       "Bash(gh pr create:*)",
-      "Bash(git stash:*)"
+      "Bash(git stash:*)",
+      "WebFetch(domain:github.com)",
+      "Bash(cat:*)",
+      "mcp__context7__resolve-library-id",
+      "Bash(curl:*)",
+      "Bash(xargs -I {} sh -c 'jar -tf \"\"\"\"{}\"\"\"\" | grep -E \"\"\"\"annotation|JsonProperty\"\"\"\" | head -20')",
+      "Bash(xargs -I {} sh -c 'jar -tf \"\"\"\"{}\"\"\"\" | grep JsonProperty')",
+      "Bash(git pull:*)",
+      "WebFetch(domain:raw.githubusercontent.com)"
     ],
     "deny": []
   }
